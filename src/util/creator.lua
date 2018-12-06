@@ -82,6 +82,14 @@ local nodeFactory = {
 		local node = cc.Node:create()
 		return parseNode(node, object)
 	end,
+	Canvas = function(object)
+		local node = cc.Node:create()
+		node = parseNode(node, object)
+		local size = node:getContentSize();
+		node:size(display.size)
+		node:pos(display.width / 2, display.height / 2)
+		return node
+	end,
 	Sprite = function(object)
 		-- FIXME sizeMode?spriteType?trimEnabled?
 		local sprite

@@ -10,7 +10,8 @@ class Canvas extends Node {
         state._fit_width = component._fitWidth;
         state._fit_height = component._fitHeight;
 
-        this._jsonNode.object_type = 'Node';
+        // this._jsonNode.object_type = 'Node';
+        this._jsonNode.object_type = 'Canvas';
     }
 }
 

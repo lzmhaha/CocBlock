@@ -10,6 +10,8 @@ function MainScene:ctor()
 end
 
 function MainScene:onEnter()
+    local node = require('util.creator').parseJson('creator/scenes/login.json')
+    node:addTo(self)
 end
 
 function MainScene:onExit()
