@@ -1,0 +1,108 @@
+{
+	"version": "0.4.0",
+	"root": {
+		"object": {
+			"node": {
+				"contentSize": {
+					"w": 0,
+					"h": 0
+				},
+				"enabled": true,
+				"anchorPoint": {
+					"x": 0,
+					"y": 0
+				},
+				"color": {
+					"r": 255,
+					"g": 255,
+					"b": 255
+				},
+				"opacity": 255,
+				"groupIndex": 0,
+				"colliders": []
+			}
+		},
+		"object_type": "Scene",
+		"children": [
+			{
+				"object": {
+					"contentSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"enabled": true,
+					"name": "Canvas",
+					"anchorPoint": {
+						"x": 0.5,
+						"y": 0.5
+					},
+					"color": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"opacity": 255,
+					"position": {
+						"x": 960,
+						"y": 540
+					},
+					"rotationSkewX": 0,
+					"rotationSkewY": 0,
+					"skewX": 0,
+					"skewY": 0,
+					"groupIndex": 0,
+					"colliders": []
+				},
+				"object_type": "Node",
+				"children": [
+					{
+						"object": {
+							"contentSize": {
+								"w": 0,
+								"h": 0
+							},
+							"enabled": true,
+							"name": "Main Camera",
+							"anchorPoint": {
+								"x": 0.5,
+								"y": 0.5
+							},
+							"color": {
+								"r": 255,
+								"g": 255,
+								"b": 255
+							},
+							"opacity": 255,
+							"position": {
+								"x": 0,
+								"y": 0
+							},
+							"rotationSkewX": 0,
+							"rotationSkewY": 0,
+							"skewX": 0,
+							"skewY": 0,
+							"groupIndex": 0,
+							"colliders": []
+						},
+						"object_type": "Node",
+						"children": []
+					}
+				]
+			}
+		]
+	},
+	"designResolution": {
+		"w": 1920,
+		"h": 1080
+	},
+	"resolutionFitWidth": false,
+	"resolutionFitHeight": true,
+	"spriteFrames": [],
+	"collisionMatrix": [
+		{
+			"value": [
+				true
+			]
+		}
+	]
+}
