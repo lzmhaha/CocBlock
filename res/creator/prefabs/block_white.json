@@ -5,11 +5,11 @@
 			"node": {
 				"node": {
 					"contentSize": {
-						"w": 151,
-						"h": 101
+						"w": 211,
+						"h": 195
 					},
 					"enabled": true,
-					"name": "block_red",
+					"name": "block_white",
 					"anchorPoint": {
 						"x": 0.5,
 						"y": 0.5
@@ -21,8 +21,8 @@
 					},
 					"opacity": 255,
 					"position": {
-						"x": 75,
-						"y": 50
+						"x": 30,
+						"y": 47
 					},
 					"rotationSkewX": 0,
 					"rotationSkewY": 0,
@@ -31,18 +31,18 @@
 					"groupIndex": 0,
 					"colliders": []
 				},
-				"spriteFrameName": "block_red.png",
-				"spriteType": "Simple",
+				"spriteFrameName": "block_white.png",
+				"spriteType": "Sliced",
 				"srcBlend": 770,
 				"dstBlend": 771,
 				"trimEnabled": true,
-				"sizeMode": "Trimmed",
+				"sizeMode": "Custom",
 				"contentSize": {
-					"w": 151,
-					"h": 101
+					"w": 211,
+					"h": 195
 				},
 				"enabled": true,
-				"name": "block_red",
+				"name": "block_white",
 				"anchorPoint": {
 					"x": 0.5,
 					"y": 0.5
@@ -54,8 +54,8 @@
 				},
 				"opacity": 255,
 				"position": {
-					"x": 75,
-					"y": 50
+					"x": 30,
+					"y": 47
 				},
 				"rotationSkewX": 0,
 				"rotationSkewY": 0,
@@ -64,12 +64,12 @@
 				"groupIndex": 0,
 				"colliders": []
 			},
-			"spriteFrameName": "block_red.png",
-			"spriteType": "Simple",
+			"spriteFrameName": "block_white.png",
+			"spriteType": "Sliced",
 			"srcBlend": 770,
 			"dstBlend": 771,
 			"trimEnabled": true,
-			"sizeMode": "Trimmed"
+			"sizeMode": "Custom"
 		},
 		"object_type": "Sprite",
 		"children": []
@@ -121,10 +121,10 @@
 				"h": 101
 			},
 			"centerRect": {
-				"x": 0,
-				"y": 0,
-				"w": 151,
-				"h": 101
+				"x": 25,
+				"y": 25,
+				"w": 101,
+				"h": 51
 			}
 		}
 	],

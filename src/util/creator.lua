@@ -17,8 +17,9 @@ local function loadFrames(spriteFrames)
 			info.originalSize
 		)
 		-- XXX: info.centerRect is not use in Quick
-		-- info.centerRect.width = info.centerRect.w
-		-- info.centerRect.height = info.centerRect.h
+		info.centerRect.width = info.centerRect.w
+		info.centerRect.height = info.centerRect.h
+		frame['capinsets'] = info.centerRect
 
 		if frame then
 			spriteFrameCache:addSpriteFrame(frame, info.name)
@@ -96,6 +97,7 @@ local nodeFactory = {
 		if object.spriteType == 'Sliced' then
 			local sf = spriteFrameCache:getSpriteFrame(object.spriteFrameName)
 			sprite = ccui.Scale9Sprite:createWithSpriteFrame(sf)
+			if sf['capinsets'] then sprite:setCapInsets(sf['capinsets']) end
 		else
 			sprite = cc.Sprite:createWithSpriteFrameName(object.spriteFrameName)
 			sprite:setBlendFunc(object.srcBlend, object.dstBlend)

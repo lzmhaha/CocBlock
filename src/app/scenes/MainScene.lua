@@ -13,7 +13,7 @@ function MainScene:onEnter()
     -- local node = require('util.creator').parseJson('creator/scenes/login.json')
     -- node:addTo(self)
 
-    local prefab = require('util.creator').parseJson('creator/prefabs/block_red.json')
+    local prefab = require('util.creator').parseJson('creator/prefabs/block_white.json')
     prefab:center():addTo(self)
 end
 

@@ -31,9 +31,9 @@ class BuildWorker extends WorkerBase {
         Utils.getAssetsInfo(function(uuidmap) {
             let copyReourceInfos = this._convertFireToJson(uuidmap);
             let prefabInfo = this._convertPrefabToJson(uuidmap);
-            let dynamicLoadRes = this._getDynamicLoadRes(uuidmap);
+            // let dynamicLoadRes = this._getDynamicLoadRes(uuidmap);
+            // Object.assign(copyReourceInfos, dynamicLoadRes);
             // Object.assign(copyReourceInfos, prefabInfo);
-            Object.assign(copyReourceInfos, dynamicLoadRes);
             this._compileJsonToBinary(function() {
                 this._copyResources(copyReourceInfos);
                 Editor.Ipc.sendToAll('creator-luacpp-support:state-changed', 'finish', 100);
