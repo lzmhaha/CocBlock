@@ -1,0 +1,138 @@
+{
+	"version": "0.4.0",
+	"root": {
+		"object": {
+			"node": {
+				"node": {
+					"contentSize": {
+						"w": 151,
+						"h": 101
+					},
+					"enabled": true,
+					"name": "block_red",
+					"anchorPoint": {
+						"x": 0.5,
+						"y": 0.5
+					},
+					"color": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"opacity": 255,
+					"position": {
+						"x": 75,
+						"y": 50
+					},
+					"rotationSkewX": 0,
+					"rotationSkewY": 0,
+					"skewX": 0,
+					"skewY": 0,
+					"groupIndex": 0,
+					"colliders": []
+				},
+				"spriteFrameName": "block_red.png",
+				"spriteType": "Simple",
+				"srcBlend": 770,
+				"dstBlend": 771,
+				"trimEnabled": true,
+				"sizeMode": "Trimmed",
+				"contentSize": {
+					"w": 151,
+					"h": 101
+				},
+				"enabled": true,
+				"name": "block_red",
+				"anchorPoint": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"color": {
+					"r": 255,
+					"g": 255,
+					"b": 255
+				},
+				"opacity": 255,
+				"position": {
+					"x": 75,
+					"y": 50
+				},
+				"rotationSkewX": 0,
+				"rotationSkewY": 0,
+				"skewX": 0,
+				"skewY": 0,
+				"groupIndex": 0,
+				"colliders": []
+			},
+			"spriteFrameName": "block_red.png",
+			"spriteType": "Simple",
+			"srcBlend": 770,
+			"dstBlend": 771,
+			"trimEnabled": true,
+			"sizeMode": "Trimmed"
+		},
+		"object_type": "Sprite",
+		"children": []
+	},
+	"resolutionFitWidth": false,
+	"resolutionFitHeight": true,
+	"spriteFrames": [
+		{
+			"name": "block_red.png",
+			"texturePath": "creator/img/battle.png",
+			"rect": {
+				"x": 2,
+				"y": 105,
+				"w": 151,
+				"h": 101
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 151,
+				"h": 101
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 151,
+				"h": 101
+			}
+		},
+		{
+			"name": "block_white.png",
+			"texturePath": "creator/img/battle.png",
+			"rect": {
+				"x": 2,
+				"y": 2,
+				"w": 151,
+				"h": 101
+			},
+			"offset": {
+				"x": 0,
+				"y": 0
+			},
+			"rotated": false,
+			"originalSize": {
+				"w": 151,
+				"h": 101
+			},
+			"centerRect": {
+				"x": 0,
+				"y": 0,
+				"w": 151,
+				"h": 101
+			}
+		}
+	],
+	"collisionMatrix": [
+		{
+			"value": [
+				true
+			]
+		}
+	]
+}

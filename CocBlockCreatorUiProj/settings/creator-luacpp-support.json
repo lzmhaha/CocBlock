@@ -2,6 +2,5 @@
   "autoBuild": false,
   "exportResourceDynamicallyLoaded": false,
   "path": "D:\\code\\cocos-lua\\cocblock",
-  "setup": false,
-  "exportResourceOnly": false
+  "setup": false
 }

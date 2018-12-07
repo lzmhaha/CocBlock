@@ -4,8 +4,10 @@ const path = require('path');
 const Utils = require('../Utils');
 const Constants = require('../Constants');
 const Scene = require('./Scene');
+const Node = require('./Node');
 const state = require('./Global').state;
 const get_sprite_frame_name_by_uuid = require('./Utils').get_sprite_frame_name_by_uuid;
+const create_node = require('./Utils').create_node;
 
 let uuidInfos = null;
 
@@ -109,6 +111,34 @@ class FireParser {
             }
         });
     }
+
+    runPrefab(filename, assetpath, path_to_json_files) {
+        state._filename = path.basename(filename, '.prefab');
+        let sub_folder = path.dirname(filename).substr(Constants.ASSETS_PATH.length + 1);
+        let json_name = path.join(path_to_json_files, sub_folder, state._filename) + '.json';
+        this._json_file = this.create_file(json_name);
+        state._assetpath = assetpath;
+
+        state._json_data = JSON.parse(fs.readFileSync(filename));
+
+        state._json_data.forEach(obj => {
+            if (obj.__type__ === 'cc.Prefab') {
+                let prefab = obj.data;
+                let index = prefab.__id__;
+                let type = Node.guess_type(state._json_data[index]);
+                let pobj = create_node(type, state._json_data[index]);
+
+                pobj.parse_properties();
+
+                this.to_json_setup();
+                let jsonNode = pobj.to_json(0, 0);
+                this._json_output.root = jsonNode;
+                let dump = JSON.stringify(this._json_output, null, '\t').replace(/\\\\/g,'/');
+                fs.writeSync(this._json_file, dump);
+                fs.close(this._json_file);
+            }
+        });
+    }
 }
 
 function parse_fire(filenames, assetpath, path_to_json_files, uuidmaps) {
@@ -130,4 +160,24 @@ function parse_fire(filenames, assetpath, path_to_json_files, uuidmaps) {
     return uuid;
 }
 
-module.exports = parse_fire;
+function parse_prefab(filenames, assetpath, path_to_json_files, uuidmaps) {
+    if (assetpath[-1] != '/')
+    assetpath += '/';
+
+    uuidinfos = uuidmaps;
+
+    let uuid = {};
+
+    filenames.forEach(function(filename) {
+        state.reset();
+        let parser = new FireParser();
+        parser.runPrefab(filename, assetpath, path_to_json_files)
+        for(let key in state._uuid) {
+            if (state._uuid.hasOwnProperty(key))
+                uuid[key] = state._uuid[key];
+        }
+    });
+    return uuid;
+}
+
+module.exports = {parse_fire: parse_fire, parse_prefab: parse_prefab};

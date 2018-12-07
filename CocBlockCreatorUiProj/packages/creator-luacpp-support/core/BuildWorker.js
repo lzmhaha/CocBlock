@@ -9,7 +9,7 @@ const Utils = require('./Utils');
 const Constants = require('./Constants');
 const Fs = require('fire-fs');
 const Del = require('del')
-const parse_fire = require('./parser/ConvertFireToJson');
+const {parse_fire, parse_prefab} = require('./parser/ConvertFireToJson');
 const parse_utils = require('./parser/Utils')
 
 const {WorkerBase, registerWorker} = require('./WorkerBase');
@@ -30,7 +30,9 @@ class BuildWorker extends WorkerBase {
 
         Utils.getAssetsInfo(function(uuidmap) {
             let copyReourceInfos = this._convertFireToJson(uuidmap);
+            let prefabInfo = this._convertPrefabToJson(uuidmap);
             let dynamicLoadRes = this._getDynamicLoadRes(uuidmap);
+            // Object.assign(copyReourceInfos, prefabInfo);
             Object.assign(copyReourceInfos, dynamicLoadRes);
             this._compileJsonToBinary(function() {
                 this._copyResources(copyReourceInfos);
@@ -46,6 +48,13 @@ class BuildWorker extends WorkerBase {
         let copyReourceInfos = parse_fire(fireFiles, 'creator', Constants.JSON_PATH, uuidmap);
 
         return copyReourceInfos;
+    }
+
+    _convertPrefabToJson(uuidmap) {
+        let prefabFiles = this._getPrefabList();
+        let prefabInfos = parse_prefab(prefabFiles, 'creator', Constants.JSON_PATH, uuidmap);
+
+        return prefabInfos;
     }
 
     // .json -> .ccreator
@@ -118,6 +127,10 @@ class BuildWorker extends WorkerBase {
     // get all .fire file in assets folder
     _getFireList() {
         return this._getFilesWithExt(Constants.ASSETS_PATH, ['.fire'], true);
+    }
+
+    _getPrefabList() {
+        return this._getFilesWithExt(Constants.ASSETS_PATH, ['.prefab'], true);
     }
 
     _getJsonList() {
