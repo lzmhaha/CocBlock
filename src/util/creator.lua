@@ -4,6 +4,8 @@ local spriteFrameCache = cc.SpriteFrameCache:getInstance()
 
 local function loadFrames(spriteFrames)
 	for _, info in ipairs(spriteFrames) do
+
+		if spriteFrameCache:getSpriteFrame(info.name) then return end
 		-- fix the value
 		info.rect.width = info.rect.w
 		info.rect.height = info.rect.h
