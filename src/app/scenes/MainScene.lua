@@ -4,17 +4,26 @@ local MainScene = class("MainScene", function()
 end)
 
 function MainScene:ctor()
-    display.newTTFLabel({text = "Hello, World", size = 64})
-        :align(display.CENTER, display.cx, display.cy)
-        :addTo(self)
+    self.uiLayer = display.newNode():size(display.size):addTo(self)
+    self.battleLayer = display.newNode():addTo(self):pos(0, 0)
+    :setCameraMask(CAMERA_FRAG_BATTLE)
 end
 
 function MainScene:onEnter()
-    -- local node = require('util.creator').parseJson('creator/scenes/login.json')
-    -- node:addTo(self)
+    local map = require('app.battle.BattleMap').new('map.tmx')
+    local size = map:getContentSize()
+    map:addTo(self.battleLayer)
 
-    local prefab = require('util.creator').parseJson('creator/prefabs/block_white.json')
-    prefab:center():addTo(self)
+    local layer = map:getLayer('floor')
+    layer:setTileGID(5, cc.p(0, 0))
+    layer:setTileGID(6, cc.p(1, 0))
+
+    local camera = require('app.battle.BattleCamera').new()
+    camera:addTo(self.battleLayer)
+    camera:setPosition(map:getCenterPos())
+    camera:scale(5):scaleTo(1, 1)
+    self.battleCamera = camera
+
 end
 
 function MainScene:onExit()

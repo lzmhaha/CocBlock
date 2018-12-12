@@ -2,6 +2,7 @@
 require("config")
 require("cocos.init")
 require("framework.init")
+require('app.GameCfg')
 
 local AppBase = require("framework.AppBase")
 local MyApp = class("MyApp", AppBase)

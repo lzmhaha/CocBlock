@@ -7,28 +7,28 @@
             <key>block_red.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,105},{151,101}}</string>
+                <string>{{2,2},{161,101}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{151,101}}</string>
+                <string>{{0,0},{161,101}}</string>
                 <key>sourceSize</key>
-                <string>{151,101}</string>
+                <string>{161,101}</string>
             </dict>
             <key>block_white.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{151,101}}</string>
+                <string>{{2,105},{160,100}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{151,101}}</string>
+                <string>{{0,0},{160,100}}</string>
                 <key>sourceSize</key>
-                <string>{151,101}</string>
+                <string>{160,100}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -40,7 +40,7 @@
             <key>size</key>
             <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:35094c2144d50b87d26135fc83bdbc8a$</string>
+            <string>$TexturePacker:SmartUpdate:cca56d80af27eb91f57c15ab57531b0a$</string>
             <key>textureFileName</key>
             <string>battle.png</string>
         </dict>
